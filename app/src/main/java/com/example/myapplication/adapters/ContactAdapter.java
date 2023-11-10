@@ -1,7 +1,12 @@
 package com.example.myapplication.adapters;
 
+
+import static com.example.myapplication.MainActivity.callPermission;
+
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +14,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.contactActivity;
 import com.example.myapplication.models.contacts;
@@ -51,9 +59,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         holder.tvTel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_CALL);
-                i.setData(Uri.parse("tel:" + C.getTel()));
-                view.getContext().startActivity(i);
+                if (ContextCompat.checkSelfPermission(view.getContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    llamar(C.getTel(), view.getContext());
+                } else {
+                    if (view.getContext() instanceof MainActivity) {
+                        ActivityCompat.requestPermissions((MainActivity) view.getContext(), new String[]{Manifest.permission.CALL_PHONE}, callPermission);
+                    }
+                }
             }
         });
     }
@@ -83,5 +95,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
                 tvTel.setText(C.getTel());
             }
         }
+    }
+    private void llamar(String phoneNumber, Context context) {
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        context.startActivity(callIntent);
     }
 }

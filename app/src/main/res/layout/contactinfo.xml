@@ -4,64 +4,91 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/titleContact"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Información del Contacto"
-        android:textSize="30sp"
-        android:layout_marginLeft="40dp"
-        app:layout_constraintBottom_toTopOf="@id/nameContact"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/titleContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Información del Contacto"
+            android:textSize="30sp"
+            android:layout_marginBottom="150dp"/>
 
-        android:text="Nombre:"
-        app:layout_constraintBottom_toTopOf="@+id/nameContact"
+        <!-- Nombre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Nombre:"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp" />
 
-        app:layout_constraintTop_toBottomOf="@+id/titleContact" />
+        <TextView
+            android:id="@+id/nameContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Nombre Dinámico"
+            android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/nameContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/titleContact"
-        app:layout_constraintBottom_toTopOf="@id/telContact"
-        app:layout_constraintStart_toStartOf="@id/titleContact"/>
+        <!-- Número de teléfono -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Número de Teléfono:"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp" />
 
-    <TextView
-        android:id="@+id/telContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="contactotel"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/nameContact"
-        app:layout_constraintBottom_toTopOf="@id/birthContact"
-        app:layout_constraintStart_toStartOf="@id/titleContact"/>
+        <TextView
+            android:id="@+id/telContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Teléfono Dinámico"
+            android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/birthContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha de Nac"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/telContact"
-        app:layout_constraintBottom_toTopOf="@id/instContact"
-        app:layout_constraintStart_toStartOf="@id/titleContact"/>
+        <!-- Edad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Edad:"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp" />
 
-    <TextView
-        android:id="@+id/instContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Institución"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/birthContact"
-        app:layout_constraintStart_toStartOf="@id/titleContact"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/birthContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Edad Dinámica"
+            android:textSize="30sp" />
+
+        <!-- Institución -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Institución:"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/instContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Institución Dinámica"
+            android:textSize="30sp" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

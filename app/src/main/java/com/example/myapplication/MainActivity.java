@@ -19,7 +19,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int callPermission = 2;
+    public static final int callPermission = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         List<contacts> contactsList = new ArrayList<>();
-        contactsList.add(new contacts("Yo","8715659629","5-Febrero-2001","Yo"));
-        contactsList.add(new contacts("Carolina","8711857877","3-Febrero-1972","Casa"));
-        contactsList.add(new contacts("Pedro","8712832781","6-Diciembre-1970","Casa"));
-        contactsList.add(new contacts("Fridi","+52 1 8711440169","9-Febrero-1998","Casa"));
-        contactsList.add(new contacts("Anahí","987654321","NA","UTT"));
-        contactsList.add(new contacts("Sele","0123456789","NA","UA de C"));
-        contactsList.add(new contacts("Edgar","6549873210","2-Abril-2003","LUZAC"));
-        contactsList.add(new contacts("Tilin","9873216540","NA","UTT"));
+        contactsList.add(new contacts("Yo","8715659629","22","Yo"));
+        contactsList.add(new contacts("Carolina","8711857877","51","Casa"));
+        contactsList.add(new contacts("Pedro","8712832781","53","Casa"));
+        contactsList.add(new contacts("Fridi","8711440169","25","Casa"));
+        contactsList.add(new contacts("Anahí","987654321","21","UTT"));
+        contactsList.add(new contacts("Sele","0123456789","19","UA de C"));
+        contactsList.add(new contacts("Edgar","6549873210","22","LUZAC"));
+        contactsList.add(new contacts("Tilin","9873216540","23","UTT"));
 
         ContactAdapter C = new ContactAdapter(contactsList);
 
