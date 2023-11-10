@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/titleContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información del Contacto"
+        android:textSize="30sp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintBottom_toTopOf="@id/nameContact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Nombre:"
+        app:layout_constraintBottom_toTopOf="@+id/nameContact"
+
+        app:layout_constraintTop_toBottomOf="@+id/titleContact" />
+
+    <TextView
+        android:id="@+id/nameContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/titleContact"
+        app:layout_constraintBottom_toTopOf="@id/telContact"
+        app:layout_constraintStart_toStartOf="@id/titleContact"/>
+
+    <TextView
+        android:id="@+id/telContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contactotel"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/nameContact"
+        app:layout_constraintBottom_toTopOf="@id/birthContact"
+        app:layout_constraintStart_toStartOf="@id/titleContact"/>
+
+    <TextView
+        android:id="@+id/birthContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Nac"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/telContact"
+        app:layout_constraintBottom_toTopOf="@id/instContact"
+        app:layout_constraintStart_toStartOf="@id/titleContact"/>
+
+    <TextView
+        android:id="@+id/instContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Institución"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/birthContact"
+        app:layout_constraintStart_toStartOf="@id/titleContact"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
